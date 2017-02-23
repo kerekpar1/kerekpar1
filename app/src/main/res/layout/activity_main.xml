@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.zoli.kerekpar1.MainActivity"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main"
+        android:id="@+id/include"
+        android:layout_height="match_parent"
+        android:layout_width="146dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="502dp">
+
+        <Button
+            android:text="GPS-Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gps_button"
+            android:layout_gravity="top|left"
+            android:layout_weight="0.20"
+            android:onClick="gpsButtonClicked"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_textView"
+            android:layout_weight="0.20"
+            tools:text="idő?"
+            android:gravity="top" />
+
+        <TextView
+            android:text="Koordináta?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gps_textView"
+            android:layout_weight="0.20"
+            android:gravity="top"
+            android:layout_gravity="top|left" />
+
+        <TextView
+            android:text="sebesség?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spd_textView"
+            android:layout_weight="0.20"
+            android:gravity="top|left" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
