@@ -1,4 +1,3 @@
-/*
 package com.example.zoli.kerekpar1;
 
 import android.Manifest;
@@ -10,7 +9,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,21 +18,29 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
-
-public class MainActivity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
     private TextView gpsTextView;
     private TextView spdTextView;
     private TextView tTextView;
 
     private LocationManager lm;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_main2);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         gpsTextView =  (TextView)findViewById(R.id.gps_textView);
         spdTextView =  (TextView)findViewById(R.id.spd_textView);
@@ -51,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         //lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 100, this);
     }
+
 
     private class MyLocationListener implements LocationListener {
 
@@ -100,7 +107,4 @@ public class MainActivity extends AppCompatActivity {
             gpsTextView.setText("nincs gps jog");
         }
     }
-
-
 }
-*/
